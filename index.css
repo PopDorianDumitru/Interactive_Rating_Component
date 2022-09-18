@@ -1,0 +1,136 @@
+.attribution { 
+    font-size: 11px; 
+    text-align: center; 
+    place-self: end center;
+    margin-bottom: 2em;
+    color: lightcyan;
+}
+.attribution a { 
+    color: hsl(228, 26%, 55%); 
+}
+
+*{
+    margin: 0;
+}
+
+body{
+    display: grid;
+    min-height: 100vh;
+    grid-template-rows: auto 5vh;
+    background-color: hsl(216, 12%, 8%);
+}
+
+#mainThought{
+    color: white;
+    font-size: 20px;
+    margin-bottom: 0.5em;
+}
+
+#ratingComponent{
+    background-color: hsl(213, 19%, 18%);
+    color:  hsl(216, 12%, 54%);
+    width: 84vw;
+    border-radius: 10px;
+    box-sizing: border-box;
+    padding: 1.4em;
+    display: flex;
+    flex-direction: column;
+    font-size: 15px;
+    font-family: 'Overpass', sans-serif;
+}
+
+#starIcon{
+    background-color:hsl(213, 19%, 20%);
+    padding: 0.6em;
+    border-radius: 50%;
+    width: max-content;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    height: 0.6em;
+    margin-bottom: 1em;
+    justify-self: center;
+    
+}
+#bulkThought{
+    margin-bottom: 0.8em;
+}
+
+#buttons{
+    display: flex;
+    flex-direction: row;
+    justify-content:space-between;
+    margin-bottom: 1.5em;
+}
+
+.buttonNumbers{
+    background-color: hsl(213, 19%, 20%);
+    border-radius: 50%;
+    border: none;
+    color: hsl(216, 12%, 54%);
+    cursor: pointer;
+    font-family: 'Overpass', sans-serif;
+    width: 2.5em;
+    height: 2.5em;
+    transition: 250ms color, 250ms background-color;
+}
+
+.buttonNumbers:hover{
+    background-color: hsl(217, 12%, 63%);
+    color: white;
+}
+
+#submitButton{
+    background-color: hsl(25, 97%, 53%);
+    border: none;
+    border-radius: 50px;
+    color: white;
+    padding: 0.8em;
+    letter-spacing: 0.1em;
+    font-family: 'Overpass', sans-serif;
+    transition: 250ms background-color, 250ms color;
+    font-weight: lighter;
+}
+#submitButton:hover{
+    background-color: white;
+    color: hsl(25, 97%, 53%)
+}
+
+#selectedButton{
+    background-color: hsl(25, 97%, 53%);
+    color: white;
+}
+
+#phoneIcon{
+    padding: 0.6em;
+    border-radius: 50%;
+    width: max-content;
+    display: flex;
+    align-items: center;
+    margin: 0 auto;
+    margin-bottom: 1em;
+    justify-self: center;
+}
+
+#score{
+    background-color: hsl(213, 19%, 20%);
+    color: rgb(216, 141, 0);
+    padding: 0.6em;
+    border-radius: 30px;    
+    padding-left: 0.8em;
+    font-size:small;
+    padding-right: 0.8em;
+    margin-bottom: 1em;
+    width: 70%;
+    text-align: center;   
+}
+
+@media (min-width: 400px){
+    #ratingComponent{
+        max-width: 350px;
+    }
+    .buttonNumbers{
+        width: 4em;
+        height: 4em;
+    }
+}

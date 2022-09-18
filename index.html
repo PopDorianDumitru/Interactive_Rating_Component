@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- displays site properly based on user's device -->
+
+  <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Overpass" rel="stylesheet">
+  <link rel="stylesheet" type="text/css" href="./index.css">
+  <title>Frontend Mentor | Interactive rating component</title>
+
+  <!-- Feel free to remove these styles or customise in your own stylesheet 👍 -->
+  
+</head>
+<body>
+
+  <!-- Rating state start -->
+  <div id="ratingComponent" style="place-self: center">
+    <div id="starIcon"><img src="./images/icon-star.svg" style="max-height: 100%;" id="icon"></div>
+    <div id="mainThought"> How did we do?</div>
+    <div id="bulkThought">
+      Please let us know how we did with your support request. All feedback is appreciated 
+      to help us improve our offering!
+    </div>
+    <div id="buttons">
+      <script>
+        const numb = [1,2,3,4,5];
+        const numberButtons = numb.map(num => {
+          const a = document.createElement("button");
+          a.innerText = num;
+          a.className = "buttonNumbers";
+          a.onclick = () => {
+            numberButtons.forEach(numb => numb.id = "");
+            a.id="selectedButton";
+          }
+          return a;
+        })
+        const buttonContainer = document.getElementById("buttons");
+        numberButtons.forEach(num => {
+          buttonContainer.appendChild(num);
+        })
+      </script>
+    </div>
+    <button id="submitButton">SUBMIT</div>
+    <script>
+      document.getElementById("submitButton").onclick = () => {
+        const selectedButton = document.getElementById("selectedButton");
+        if(selectedButton)
+        {
+          const image = document.getElementById("icon");
+          image.src = "./images/illustration-thank-you.svg";
+          const starIcon = document.getElementById("starIcon");
+          starIcon.id = "phoneIcon";
+          document.getElementById("mainThought").innerText = "Thank you!";
+          document.getElementById("bulkThought").innerText = "We appreciate you taking the time to give a rating. If you ever need more support, don’t hesitate to get in touch!"
+          document.getElementById("submitButton").style.display = "none";
+          document.getElementById("buttons").style.display = "none";
+          document.getElementById("ratingComponent").style.alignItems = "center";
+          document.getElementById("bulkThought").style.textAlign = "center";
+          const score = document.createElement("div");
+          score.id = "score";
+          const scoreNumber = Number(selectedButton.innerText);
+          score.innerText = `You selected ${scoreNumber} out of 5`;
+          const mainThought = document.getElementById("mainThought");
+          document.getElementById("ratingComponent").insertBefore(score, mainThought);
+        }
+        else
+          alert("Please choose a rating first");
+      }
+    </script>
+  </div>
+  
+  <!-- Thank you state end -->
+  <footer class="attribution" id="footer">
+    Challenge by <a href="https://www.frontendmentor.io?ref=challenge" target="_blank">Frontend Mentor</a>. 
+    Coded by <a href="#" id="programmerName">Pop Dorian-Dumitru</a>.
+  </footer>
+</body>
+</html>
